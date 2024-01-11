@@ -2,6 +2,7 @@ package testcases;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import utility.BaseClass;
@@ -20,6 +21,6 @@ public class LoginTest extends BaseClass { //achieving inheritance
         //and hiding the background details
         loginpage.loginToApp(excel.getUserName("LoginDetails",1,0),
                 excel.getPassword("LoginDetails",1,1));
-        Helper.takeSS_URLtoExcel("./Screenshot_Folder/ST_Env/ss.png", "./qaSanity.xlsx","Login");
+        Helper.takeSS_URLtoExcel("./Screenshot_Folder/ST_Env/ss.png"+Helper.getCurrentDateTime(), "./qaSanity.xlsx","Login");
     }
 }

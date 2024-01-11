@@ -12,12 +12,17 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class Helper extends BaseClass {
 
     static File screenshotFile;
 
-    //Screenshot method - Capture screenshot
+    //Screenshot method - Capture screenshot Method-1
     public static String takeScreenshot() {
 
         File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -32,6 +37,8 @@ public class Helper extends BaseClass {
         return screenshotPath;
     }
 
+
+    //Screenshot method - Capture screenshot Method-2
     public static void takeSS_URLtoExcel(String screenshotpath, String workbookName, String sheetName) {
 
         try {
@@ -74,6 +81,14 @@ public class Helper extends BaseClass {
             workbook.write(outputStream);
         }
     }
+
+    //Function to return the date in specified format
+    public static String getCurrentDateTime(){
+        DateFormat customFormat = new SimpleDateFormat("MM_dd_yyyy_HH_mm_ss");
+        Date currentDate = new Date();
+        return customFormat.format(currentDate);
+    }
+
 
 }
 

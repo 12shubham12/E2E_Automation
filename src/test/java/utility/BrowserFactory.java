@@ -3,6 +3,7 @@ package utility;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -17,6 +18,10 @@ public class BrowserFactory {
         else if(browserName.equals("Firefox")) {
             System.setProperty("webdriver.gecko.driver", "./Drivers/geckodriver.exe");
             driver = new FirefoxDriver();
+        }
+        else if(browserName.equals("Edge")) {
+            System.setProperty("webdriver.edge.driver", "./Drivers/msedgedriver.exe");
+            driver = new EdgeDriver();
         }
         else {
             System.out.println("No such browser");
