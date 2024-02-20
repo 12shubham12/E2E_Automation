@@ -21,7 +21,7 @@ public class BaseClass {
 
     @BeforeClass
     public void setup(){
-        driver = BrowserFactory.startApplication(driver,config.getBrowser(),config.getqaURL());
+            driver = BrowserFactory.startApplication(driver,config.getBrowser(),config.getqaURL());
     }
 
     @AfterClass
